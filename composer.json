@@ -1,0 +1,21 @@
+{
+    "name": "pigochu/yii2-ajax-renderer",
+    "description": "Yii2 Ajax Render Widget",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","ajax","render"],
+    "license": "BSD-4-Clause",
+    "authors": [
+        {
+            "name": "Pigo Chu",
+            "email": "pigochu@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "pigolab\\ajaxrenderer\\": ""
+        }
+    }
+}
