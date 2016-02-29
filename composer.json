@@ -2,7 +2,7 @@
     "name": "pigochu/yii2-ajax-renderer",
     "description": "Yii2 Ajax Render Widget",
     "type": "yii2-extension",
-    "keywords": ["yii2","extension","ajax","render"],
+    "keywords": ["yii2","extension","widget","ajax","render"],
     "license": "BSD-4-Clause",
     "authors": [
         {
