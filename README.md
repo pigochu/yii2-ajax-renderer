@@ -131,3 +131,8 @@ $.renderAjax({
 });
 ~~~
 
+beforeRender & afterRender callback options
+- data : This is an array , renderAjax parse response data than convert to [contents,scripts,links] , you can modify it at beforeRender or init some plugin at afterRender. 
+- options : This is $.renderAjax(options) passed to the callback
+- originData : Origin response data
+

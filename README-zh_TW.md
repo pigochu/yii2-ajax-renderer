@@ -129,3 +129,9 @@ $.renderAjax({
     afterRender : function(data , options , originData) { // 如果 ajax 呼叫成功, 在 render 之後會觸發此事件  },
 });
 ~~~
+
+beforeRender & afterRender callback 傳遞參數解釋
+- data : 這是一個陣列 , renderAjax 頗析完返回的資料會轉成 [contents,scripts,links] ,你可以在 beforeRender 中改變其值將會影響 render 結果，或於 afterRender 中對 render 後的元素初始化一些插件 . 
+- options : This is $.renderAjax(options) passed to the callback
+- originData : Origin response data
+

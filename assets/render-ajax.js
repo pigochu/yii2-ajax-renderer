@@ -28,12 +28,12 @@
             var $ele = jQuery(this);
             var nodeName = jQuery(this)[0].nodeName;
             if(nodeName === 'LINK' && $ele.attr('href') !== undefined) {
-                links.push(this);
+                links.push($ele);
             }
             else if(nodeName === 'SCRIPT') {
-                scripts.push(this);
+                scripts.push($ele);
             } else {
-                contents.push(this);
+                contents.push($ele);
             }
         });
 
