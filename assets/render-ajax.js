@@ -25,7 +25,7 @@
         var links = [];
         
         jQuery(data).each(function(){
-            var $ele = jQuery(this);
+            var $ele = this;
             var nodeName = jQuery(this)[0].nodeName;
             if(nodeName === 'LINK' && $ele.attr('href') !== undefined) {
                 links.push($ele);
@@ -37,6 +37,13 @@
             }
         });
 
+        var renderData = {
+            contents : $(contents) ,
+            scripts: $(scripts),
+            links: $(links)
+        };
+
+
         if(options.renderMode === 'replace') {
             jQuery(options.targetElement).html('');
         }
@@ -44,25 +51,17 @@
         
         // trigger event beforeRender
         if(jQuery.isFunction(options.beforeRender)) {
-            options.beforeRender({
-                contents : contents,
-                scripts : scripts,
-                links : links,
-            },options,data);
+            options.beforeRender(renderData,options,data);
         }
 
         
-        _renderLinks(links);
-        _renderHtml(options.targetElement , options.renderMode , contents);
-        _renderScripts(scripts);
+        _renderLinks(renderData.links);
+        _renderHtml(options.targetElement , options.renderMode , renderData.contents);
+        _renderScripts(renderData.scripts);
         
         // trigger event afterRender
         if(jQuery.isFunction(options.afterRender)) {
-            options.afterRender({
-                contents : contents,
-                scripts : scripts,
-                links : links,
-            },options,data);
+            options.afterRender(renderData,options,data);
         }
     };
     
