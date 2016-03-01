@@ -7,7 +7,7 @@ Install :
 ---------
 
 ~~~
-composer require yii2-ajax-renderer:"dev-master"
+composer require pigochu/yii2-ajax-renderer:"dev-master"
 ~~~
 
 Usage :

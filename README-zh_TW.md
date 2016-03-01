@@ -7,7 +7,7 @@ Yii2 Ajax Renderer
 -------
 
 ~~~
-composer require yii2-ajax-renderer:"dev-master"
+composer require pigochu/yii2-ajax-renderer:"dev-master"
 ~~~
 
 使用方法
