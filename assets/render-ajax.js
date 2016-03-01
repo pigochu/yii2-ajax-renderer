@@ -40,9 +40,30 @@
         if(options.renderMode === 'replace') {
             jQuery(options.targetElement).html('');
         }
+        
+        
+        // trigger event beforeRender
+        if(jQuery.isFunction(options.beforeRender)) {
+            options.beforeRender({
+                contents : contents,
+                scripts : scripts,
+                links : links,
+            },options,data);
+        }
+
+        
         _renderLinks(links);
         _renderHtml(options.targetElement , options.renderMode , contents);
         _renderScripts(scripts);
+        
+        // trigger event afterRender
+        if(jQuery.isFunction(options.afterRender)) {
+            options.afterRender({
+                contents : contents,
+                scripts : scripts,
+                links : links,
+            },options,data);
+        }
     };
     
     /**
@@ -128,16 +149,7 @@
         
         jQuery.extend(options , {
             success : function(data, status, xhr) {
-                // trigger event beforeRender
-                if(jQuery.isFunction(options.beforeRender)) {
-                    options.beforeRender(data,options);
-                }
-                // render content
                 _render(data , options);
-                // triger event afterRender
-                if(jQuery.isFunction(options.afterRender)) {
-                     options.afterRender(data,options);
-                }
             }
         });
         jQuery.ajax(options);

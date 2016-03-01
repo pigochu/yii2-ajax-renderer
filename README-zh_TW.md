@@ -125,7 +125,7 @@ $.renderAjax({
     url : "<?= Url::to('Your Route') ?>",
     renderMode : 'append',
     targetElement : $('#tbl tbody'),
-    beforeRender : function(data , options) { // 如果 ajax 呼叫成功，要 render 之前會觸發此事件 },
-    afterRender : function(data , options) { // 如果 ajax 呼叫成功, 在 render 之後會觸發此事件  },
+    beforeRender : function(data , options , originData) { // 如果 ajax 呼叫成功，要 render 之前會觸發此事件 },
+    afterRender : function(data , options , originData) { // 如果 ajax 呼叫成功, 在 render 之後會觸發此事件  },
 });
 ~~~

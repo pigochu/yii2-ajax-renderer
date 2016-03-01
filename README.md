@@ -126,7 +126,8 @@ $.renderAjax({
     url : "<?= Url::to('Your Route') ?>",
     renderMode : 'append',
     targetElement : $('#tbl tbody'),
-    beforeRender : function(data , options) { // if ajax call success，than trigger this event },
-    afterRender : function(data , options) { // if ajax call success, and render success , than trigger this event  },
+    beforeRender : function(data , options , originData) { // if ajax call success，than trigger this event },
+    afterRender : function(data , options , originData) { // if ajax call success, and render success , than trigger this event  },
 });
 ~~~
+
